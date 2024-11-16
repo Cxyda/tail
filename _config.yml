@@ -1,20 +1,20 @@
 # Site settings
-title:          Tail
-description:    "Minimal Jekyll blog theme"
-baseurl:        "/tail"
-url:
+title:          cxyda.github.io
+description:    "A game development blog about c# and Unity3D"
+baseurl:        ""
+url:          "https://cxyda.github.io" 
 
 # https://jekyllrb.com/docs/configuration/options/
 timezone: Asia/Kolkata
 
 # Google Analytics
-google_analytics:
+google_analytics: UA-43339302-11
 
 # Author
 #   This is the default author name displayed on all posts, can be overridden by setting a different `author: Your Name`
 #   in the frontmatter
 author:
-  name:         Your Name
+  name:         Daniel Steegmüller
 
 # Build settings
 markdown:       kramdown
@@ -37,6 +37,7 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-gist
 
 # Permalinks
 permalink:      /:title
@@ -48,4 +49,4 @@ exclude:
   - LICENSE.md
 
 # Disqus (Set to your disqus id)
-disqus:
+disqus: cxyda_github_io
