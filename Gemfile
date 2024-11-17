@@ -10,7 +10,7 @@ group :jekyll_plugins do
   gem 'jekyll-paginate'
   gem 'jekyll-email-protect'
   gem 'jekyll-feed'
-  
+  gem 'jekyll-last-modified'
   #dependeny for custom footnote plugin
   gem 'nokogiri'
   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

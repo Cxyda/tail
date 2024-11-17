@@ -1,23 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+---
 
-  {% include head.html %}
-  <script src="/assets/js/custom.js"></script>
+<div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    {% if page.author %}
+        {{ page.author }}
+    {% else %}
+        {{ site.author.name }}
+    {% endif %}
 
-  <body>
+    {% if page.date and page.lastmod %}
+      <br>
+      <span>on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      <span> and last updated on&nbsp;</span><time datetime="{{ page.lastmod }}">{{ page.lastmod | date: "%B %d, %Y" }}</time>
+    {% elsif page.date %}
+      <br>
+      <span>on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
+    {% endif %}
+  </div>
 
-    {% include navigation.html %}
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-line"></div>
 
-    <div class="tags">
-      <div class="tags-header">
-        <h2 class="tags-header-title">{{ page.title }}</h2>
-        <div class="tags-header-line"></div>
-      </div>
+  {{ content }}
+</div>
 
-    <main>
-      {{ content }}
-    </main>
+{% if page.comments %}
+  {% include disqus_comments.html %}
+{% endif %}
 
-    {% include footer.html %}
-  </body>
-</html>
+<div class="pagination">
+  {% if page.next.url %}
+    <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
+  {% endif %}
+  {% if page.previous.url %}
+    <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
+  {% endif %}
+
+  <a href="#" class="top">Top</a>
+</div>
